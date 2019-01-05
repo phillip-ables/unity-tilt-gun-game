@@ -12,4 +12,10 @@ public class MenuSceneScript : MonoBehaviour {
 
         fadeGroup.alpha = 1;
     }
+
+    private void Update()
+    {
+        //Fade-in
+        fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+    }
 }
