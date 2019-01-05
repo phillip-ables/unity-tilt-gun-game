@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuSceneScript : MonoBehaviour {
     private CanvasGroup fadeGroup;
@@ -22,7 +23,7 @@ public class MenuSceneScript : MonoBehaviour {
     //Buttons
     public void OnPlayClick()
     {
-        Debug.Log("Play button has been clicked!");
+        SceneManager.LoadScene("Solo_1-10");
     }
 
     public void OnShopClick()
