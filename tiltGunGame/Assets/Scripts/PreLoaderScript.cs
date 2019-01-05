@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PreLoaderScript : MonoBehaviour {
     private CanvasGroup fadeGroup;
@@ -38,7 +39,7 @@ public class PreLoaderScript : MonoBehaviour {
         {
             fadeGroup.alpha = Time.time - minimumLogoTime;
             if (fadeGroup.alpha >= 1)
-                Debug.Log("Change the scene");
+                SceneManager.LoadScene("MainMenu");
         }
     }
 }
