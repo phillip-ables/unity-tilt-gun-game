@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PreLoaderScript : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private CanvasGroup fadeGroup;
+    private float loadTime;
+    private float minimumLogoTime = 3.0f;  // Minimum time of that scene
 }
