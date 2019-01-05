@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
     <Compile Include="Assets\Scripts\PreLoaderScript.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/phill/Desktop/code/unity-tilt-gun-game/tiltGunGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
