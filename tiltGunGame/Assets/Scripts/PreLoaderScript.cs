@@ -24,4 +24,20 @@ public class PreLoaderScript : MonoBehaviour {
             loadTime = Time.time;
 
     }
+
+    private void Update()
+    {
+        //fade in
+        if(Time.time < minimumLogoTime)
+        {
+            fadeGroup.alpha = 1 - Time.time;
+        }
+
+        //fate-out
+        if(Time.time > minimumLogoTime && loadTime != 0)
+        {
+            if (fadeGroup.alpha >= 1)
+                Debug.Log("Change the scene");
+        }
+    }
 }
