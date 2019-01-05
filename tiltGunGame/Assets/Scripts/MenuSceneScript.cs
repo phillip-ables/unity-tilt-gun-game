@@ -18,4 +18,20 @@ public class MenuSceneScript : MonoBehaviour {
         //Fade-in
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
     }
+
+    //Buttons
+    public void OnPlayClick()
+    {
+        Debug.Log("Play button has been clicked!");
+    }
+
+    public void OnShopClick()
+    {
+        Debug.Log("Shop button has been clicked");
+    }
+
+    public void OnMultiplayerClick()
+    {
+        Debug.Log("MultiplayerButton has been clicked");
+    }
 }
