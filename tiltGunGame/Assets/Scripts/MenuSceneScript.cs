@@ -3,14 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuSceneScript : MonoBehaviour {
+    private CanvasGroup fadeGroup;
+    private float fadeInSpeed = 0.33f; // three seconds
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
