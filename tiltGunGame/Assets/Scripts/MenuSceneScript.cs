@@ -28,6 +28,8 @@ public class MenuSceneScript : MonoBehaviour {
 
     public void OnShopClick()
     {
+        //I think this will morph into the meta data for 
+        //Achievments
         Debug.Log("Shop button has been clicked");
     }
 
