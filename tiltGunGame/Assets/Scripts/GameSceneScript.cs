@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneScript : MonoBehaviour {
     private CanvasGroup fadeGroup;
-    private float fadInDuration = 2;
+    private float fadeInDuration = 2;
     private bool gameStarted;
-    
+
+    private void Start()
+    {
+        fadeGroup = FindObjectOfType<CanvasGroup>();
+        fadeGroup.alpha = 1;
+    }
+
+   
 
     public void ExitScene()
     {
