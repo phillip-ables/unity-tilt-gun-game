@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuSceneScript : MonoBehaviour {
+    public Transform menuContainer;
+
     public AnimationCurve enteringLevelZoomCurve;
     private bool isEnteringLevel = false;
     private float zoomDuration = 3.0f;
@@ -23,6 +25,15 @@ public class MenuSceneScript : MonoBehaviour {
     {
         //Fade-in
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+
+        if (isEnteringLevel)
+        {
+            // Add to the zoomTransition float
+            zoomTransition += (1 / zoomDuration) * Time.deltaTime;
+
+            // Change the scale following the animation curve
+            menuContainer.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 5, enteringLevelZoomCurve.Evaluate(zoomTransition));
+        }
     }
 
     //Buttons
