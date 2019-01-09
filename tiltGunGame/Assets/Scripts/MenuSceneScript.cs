@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuSceneScript : MonoBehaviour {
+    public AnimationCurve enteringLevelZoomCurve;
+    private bool isEnteringLevel = false;
+    private float zoomDuration = 3.0f;
+    private float zoomTransition;
+
     private CanvasGroup fadeGroup;
     private float fadeInSpeed = 0.33f; // three seconds
 
