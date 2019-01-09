@@ -14,7 +14,18 @@ public class GameSceneScript : MonoBehaviour {
         fadeGroup.alpha = 1;
     }
 
-   
+    private void Update()
+    {
+        if(Time.timeSinceLevelLoad <= fadeInDuration)
+        {
+            fadeGroup.alpha = 1 * (Time.timeSinceLevelLoad / fadeInDuration);
+        }
+        else if(!gameStarted)
+        {
+            fadeGroup.alpha = 0;
+            gameStarted = true;
+        }
+    }
 
     public void ExitScene()
     {
