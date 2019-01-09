@@ -18,7 +18,7 @@ public class GameSceneScript : MonoBehaviour {
     {
         if(Time.timeSinceLevelLoad <= fadeInDuration)
         {
-            fadeGroup.alpha = 1 * (Time.timeSinceLevelLoad / fadeInDuration);
+            fadeGroup.alpha = 1 - (Time.timeSinceLevelLoad / fadeInDuration);
         }
         else if(!gameStarted)
         {
