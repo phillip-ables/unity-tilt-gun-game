@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuSceneScript : MonoBehaviour {
-    public Transform menuContainer;
-    public Transform gameButton;
-    public Transform multiplayerButton;
-    public Transform shopButton;
+    public RectTransform menuContainer;
+    //public Transform menuContainer;
+    public GameObject gameButton;
+    public GameObject multiplayerButton;
+    public GameObject shopButton;
 
     public AnimationCurve enteringLevelZoomCurve;
     private bool isEnteringLevel = false;
@@ -17,6 +18,8 @@ public class MenuSceneScript : MonoBehaviour {
     private CanvasGroup fadeGroup;
     private float fadeInSpeed = 0.33f; // three seconds
     private Vector3 desiredMenuPosition;
+    private RectTransform rt;
+    private string sceneName;
 
     private void Start()
     {
@@ -39,30 +42,46 @@ public class MenuSceneScript : MonoBehaviour {
             menuContainer.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 5, enteringLevelZoomCurve.Evaluate(zoomTransition));
 
             Vector3 newDesiredPosition = desiredMenuPosition * 5;
+            newDesiredPosition -= rt.anchoredPosition3D * 5;
+
+            menuContainer.anchoredPosition3D = Vector3.Lerp(desiredMenuPosition, newDesiredPosition, enteringLevelZoomCurve.Evaluate(zoomTransition));
+
+            fadeGroup.alpha = zoomTransition;
+
+            if(zoomTransition >= 1 && sceneName != null)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 
     //Buttons
     public void OnPlayClick()
     {
-        isEnteringLevel = true;
-        desiredMenuPosition = gameButton.position;
+        desiredMenuPosition = gameButton.transform.position;
+        rt = gameButton.GetComponent<RectTransform>();
         //SceneManager.LoadScene("Solo_1-10");
+        sceneName = "Solo_1-10";
+        isEnteringLevel = true;
     }
 
     public void OnShopClick()
     {
         isEnteringLevel = true;
-        desiredMenuPosition = shopButton.position;
+        desiredMenuPosition = shopButton.transform.position;
+        rt = shopButton.GetComponent<RectTransform>();
         //I think this will morph into the meta data for 
         //Achievments
+        sceneName = null;
         Debug.Log("Shop button has been clicked");
     }
 
     public void OnMultiplayerClick()
     {
         isEnteringLevel = true;
-        desiredMenuPosition = multiplayerButton.position;
+        desiredMenuPosition = multiplayerButton.transform.position;
+        rt = multiplayerButton.GetComponent<RectTransform>();
         Debug.Log("MultiplayerButton has been clicked");
+        sceneName = null;
     }
 }

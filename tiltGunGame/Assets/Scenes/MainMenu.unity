@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuContainer: {fileID: 695347783}
+  gameButton: {fileID: 732035824}
+  multiplayerButton: {fileID: 1499827285}
+  shopButton: {fileID: 2065941806}
   enteringLevelZoomCurve:
     serializedVersion: 2
     m_Curve:
