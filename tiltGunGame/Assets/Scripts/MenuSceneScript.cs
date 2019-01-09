@@ -39,7 +39,8 @@ public class MenuSceneScript : MonoBehaviour {
     //Buttons
     public void OnPlayClick()
     {
-        SceneManager.LoadScene("Solo_1-10");
+        isEnteringLevel = true;
+        //SceneManager.LoadScene("Solo_1-10");
     }
 
     public void OnShopClick()
