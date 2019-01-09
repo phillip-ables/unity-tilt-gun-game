@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuSceneScript : MonoBehaviour {
     public Transform menuContainer;
+    public Transform gameButton;
+    public Transform multiplayerButton;
+    public Transform shopButton;
 
     public AnimationCurve enteringLevelZoomCurve;
     private bool isEnteringLevel = false;
@@ -13,6 +16,7 @@ public class MenuSceneScript : MonoBehaviour {
 
     private CanvasGroup fadeGroup;
     private float fadeInSpeed = 0.33f; // three seconds
+    private Vector3 desiredMenuPosition;
 
     private void Start()
     {
@@ -33,6 +37,8 @@ public class MenuSceneScript : MonoBehaviour {
 
             // Change the scale following the animation curve
             menuContainer.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 5, enteringLevelZoomCurve.Evaluate(zoomTransition));
+
+            Vector3 newDesiredPosition = desiredMenuPosition * 5;
         }
     }
 
@@ -40,11 +46,14 @@ public class MenuSceneScript : MonoBehaviour {
     public void OnPlayClick()
     {
         isEnteringLevel = true;
+        desiredMenuPosition = gameButton.position;
         //SceneManager.LoadScene("Solo_1-10");
     }
 
     public void OnShopClick()
     {
+        isEnteringLevel = true;
+        desiredMenuPosition = shopButton.position;
         //I think this will morph into the meta data for 
         //Achievments
         Debug.Log("Shop button has been clicked");
@@ -52,6 +61,8 @@ public class MenuSceneScript : MonoBehaviour {
 
     public void OnMultiplayerClick()
     {
+        isEnteringLevel = true;
+        desiredMenuPosition = multiplayerButton.position;
         Debug.Log("MultiplayerButton has been clicked");
     }
 }
