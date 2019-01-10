@@ -10,6 +10,8 @@ public class MenuSceneScript : MonoBehaviour {
     public GameObject multiplayerButton;
     public GameObject shopButton;
 
+    private MenuCameraScript menuCamera;
+
     public AnimationCurve enteringLevelZoomCurve;
     private bool isEnteringLevel = false;
     private float zoomDuration = 3.0f;
@@ -23,9 +25,12 @@ public class MenuSceneScript : MonoBehaviour {
 
     private void Start()
     {
+        menuCamera = FindObjectOfType<MenuCameraScript>();
+
         fadeGroup = FindObjectOfType<CanvasGroup>();
 
         fadeGroup.alpha = 1;
+
     }
 
     private void Update()
@@ -73,6 +78,7 @@ public class MenuSceneScript : MonoBehaviour {
         //I think this will morph into the meta data for 
         //Achievments
         sceneName = null;
+        menuCamera.MoveToShop();
         Debug.Log("Shop button has been clicked");
     }
 
@@ -83,5 +89,10 @@ public class MenuSceneScript : MonoBehaviour {
         rt = multiplayerButton.GetComponent<RectTransform>();
         Debug.Log("MultiplayerButton has been clicked");
         sceneName = null;
+    }
+
+    public void BackClick()
+    {
+        menuCamera.BackToMainMenu();
     }
 }
