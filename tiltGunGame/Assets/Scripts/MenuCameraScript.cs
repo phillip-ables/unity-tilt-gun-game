@@ -16,6 +16,11 @@ public class MenuCameraScript : MonoBehaviour {
     {
         startPosition = desiredPosition = transform.localPosition;
         startRotation = desiredRotation = transform.rotation;
+    }
 
+    private void Update()
+    {
+        transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, 0.1f);
+        transform.localRotation = Quaternion.Lerp(transform.rotation, desiredRotation, 0.1f);
     }
 }
