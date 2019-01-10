@@ -26,10 +26,11 @@ public class MenuCameraScript : MonoBehaviour {
 
     public void BackToMainMenu()
     {
-
+        desiredPosition = startPosition;
+        desiredRotation = startRotation;
     }
 
-    public void MoveToMenu()
+    public void MoveToShop()
     {
 
     }
