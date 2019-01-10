@@ -16,6 +16,9 @@ public class MenuCameraScript : MonoBehaviour {
     {
         startPosition = desiredPosition = transform.localPosition;
         startRotation = desiredRotation = transform.rotation;
+
+        transform.position = new Vector3(0, 3.8f, -3.4f);
+        transform.rotation = new Quaternion(0,0,0,0);
     }
 
     private void Update()
@@ -28,6 +31,11 @@ public class MenuCameraScript : MonoBehaviour {
     {
         desiredPosition = startPosition;
         desiredRotation = startRotation;
+    }
+
+    public void Init()
+    {
+        MoveToShop();
     }
 
     public void MoveToShop()
