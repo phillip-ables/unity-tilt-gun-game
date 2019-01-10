@@ -32,11 +32,13 @@ public class MenuCameraScript : MonoBehaviour {
 
     public void MoveToShop()
     {
-
+        desiredPosition = shopWayPoint.localPosition;
+        desiredRotation = shopWayPoint.localRotation;
     }
 
     public void MoveToLevel()
     {
-
+        desiredPosition = levelWayPoint.localPosition;
+        desiredRotation = levelWayPoint.localRotation;
     }
 }
