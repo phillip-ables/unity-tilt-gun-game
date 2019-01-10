@@ -32,6 +32,8 @@ public class MenuSceneScript : MonoBehaviour {
 
         fadeGroup.alpha = 1;
 
+        //??
+        SetTrail();
     }
 
     private void Update()
@@ -63,15 +65,14 @@ public class MenuSceneScript : MonoBehaviour {
 
     private void SetTrail()
     {
-        //Set the active index
-        currentTrail = Instantiate(currentTrail) as GameObject;
-
-
         // Change the trail on player model
-        if(currentTrail != null)
+        if (currentTrail != null)
         {
             Destroy(currentTrail);
         }
+
+        //Set the active index
+        currentTrail = Instantiate(currentTrail) as GameObject;
 
         //Create the new trail
         //return to video 13 time 6 oh 3

@@ -113,6 +113,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &75569724
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.04250206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278270996616178, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 96584562781817590, guid: 17a51e99ab15d924daa83e7c46b1d307,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96584562781817590, guid: 17a51e99ab15d924daa83e7c46b1d307,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96129589395856886, guid: 17a51e99ab15d924daa83e7c46b1d307,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96129589395856886, guid: 17a51e99ab15d924daa83e7c46b1d307,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17a51e99ab15d924daa83e7c46b1d307, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &545219557
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +206,8 @@ MonoBehaviour:
   gameButton: {fileID: 732035824}
   multiplayerButton: {fileID: 1499827285}
   shopButton: {fileID: 2065941806}
+  currentTrail: {fileID: 1066800529693694, guid: 17a51e99ab15d924daa83e7c46b1d307,
+    type: 2}
   enteringLevelZoomCurve:
     serializedVersion: 2
     m_Curve:

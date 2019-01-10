@@ -14,7 +14,7 @@ public class MenuPlayerScript : MonoBehaviour {
     {
         if (waitTime <= 0)
         {
-            Debug.Log("Camera Go!!");
+            //Debug.Log("Camera Go!!");
             transform.position += Vector3.forward * 3 * Time.deltaTime;
         }
         else
