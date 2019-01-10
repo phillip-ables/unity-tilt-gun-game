@@ -66,6 +66,7 @@
     <Compile Include="Assets\Fantasy Skybox FREE\GE Common Assets\GE Toggle Full Screen\Scripts\GE_ToggleFullScreenUI.cs" />
     <Compile Include="Assets\Fantasy Skybox FREE\GE Common Assets\Scripts\GE_UIResponder.cs" />
     <Compile Include="Assets\Scripts\GameSceneScript.cs" />
+    <Compile Include="Assets\Scripts\MenuCameraScript.cs" />
     <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
     <Compile Include="Assets\Scripts\PreLoaderScript.cs" />
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
