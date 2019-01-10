@@ -10,6 +10,7 @@ public class MenuSceneScript : MonoBehaviour {
     public GameObject multiplayerButton;
     public GameObject shopButton;
 
+    public GameObject currentTrail;
     private MenuCameraScript menuCamera;
 
     public AnimationCurve enteringLevelZoomCurve;
@@ -37,10 +38,6 @@ public class MenuSceneScript : MonoBehaviour {
     {
         //Fade-in
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
-        if(fadeGroup.alpha == 0)
-        {
-            Debug.Log("Camera Move");
-        }
 
         if (isEnteringLevel)
         {
@@ -62,6 +59,33 @@ public class MenuSceneScript : MonoBehaviour {
                 SceneManager.LoadScene(sceneName);
             }
         }
+    }
+
+    private void SetTrail()
+    {
+        //Set the active index
+        currentTrail = Instantiate(currentTrail) as GameObject;
+
+
+        // Change the trail on player model
+        if(currentTrail != null)
+        {
+            Destroy(currentTrail);
+        }
+
+        //Create the new trail
+        //return to video 13 time 6 oh 3
+
+        //Set it as a child of the player
+        currentTrail.transform.SetParent(FindObjectOfType<MenuPlayerScript>().transform);
+
+        //Fix the wierd scaling issues / rotation
+        currentTrail.transform.localPosition = Vector3.zero;
+        currentTrail.transform.localRotation = Quaternion.Euler(0, 0, 90);
+        currentTrail.transform.localScale = Vector3.one * 0.01f;
+        //Change buy/set button text
+
+        //Remember preferences
     }
 
     //Buttons
