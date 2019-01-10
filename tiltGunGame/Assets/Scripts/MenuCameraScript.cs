@@ -15,16 +15,16 @@ public class MenuCameraScript : MonoBehaviour {
     private void Start()
     {
         startPosition = desiredPosition = transform.localPosition;
-        startRotation = desiredRotation = transform.rotation;
+        startRotation = desiredRotation = transform.localRotation;
 
-        transform.position = new Vector3(0, 3.8f, -3.4f);
-        transform.rotation = new Quaternion(0,0,0,0);
+        transform.localPosition = new Vector3(0, 3.8f, -3.4f);
+        transform.localRotation = new Quaternion(0,0,0,0);
     }
 
     private void Update()
     {
         transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, 0.1f);
-        transform.localRotation = Quaternion.Lerp(transform.rotation, desiredRotation, 0.1f);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, desiredRotation, 0.1f);
     }
 
     public void BackToMainMenu()

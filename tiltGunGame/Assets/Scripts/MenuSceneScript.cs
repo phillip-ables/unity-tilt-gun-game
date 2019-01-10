@@ -66,10 +66,12 @@ public class MenuSceneScript : MonoBehaviour {
     private void SetTrail()
     {
         // Change the trail on player model
+        /*
         if (currentTrail != null)
         {
-            Destroy(currentTrail);
+            DestroyImmediate(currentTrail, true);
         }
+        */
 
         //Set the active index
         currentTrail = Instantiate(currentTrail) as GameObject;
