@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\MenuCameraScript.cs" />
     <Compile Include="Assets\Scripts\MenuPlayerScript.cs" />
     <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\PreLoaderScript.cs" />
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\Fantasy Skybox FREE\Fog and Ambient references.txt" />

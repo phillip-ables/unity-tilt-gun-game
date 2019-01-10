@@ -6,6 +6,7 @@ public class MenuCameraScript : MonoBehaviour {
     public Transform shopWayPoint;
     public Transform levelWayPoint;
 
+    private ManagerScript manager;
     private Vector3 startPosition;
     private Quaternion startRotation;
 
@@ -19,11 +20,15 @@ public class MenuCameraScript : MonoBehaviour {
 
         transform.localPosition = new Vector3(0, 3.8f, -3.4f);
         transform.localRotation = new Quaternion(0,0,0,0);
+
+        manager = FindObjectOfType<ManagerScript>();
     }
 
     private void Update()
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, 0.1f);
+        float x = manager.GetPlayerInput().x;
+
+        transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition + new Vector3(0, x, 0) * 0.01f, 0.1f);
         transform.localRotation = Quaternion.Lerp(transform.localRotation, desiredRotation, 0.1f);
     }
 
