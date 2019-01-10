@@ -37,9 +37,9 @@ public class MenuSceneScript : MonoBehaviour {
     {
         //Fade-in
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
-        if(fadeGroup.alpha <= 0)
+        if(fadeGroup.alpha == 0)
         {
-            menuCamera.BackToMainMenu();
+            Debug.Log("Camera Move");
         }
 
         if (isEnteringLevel)
