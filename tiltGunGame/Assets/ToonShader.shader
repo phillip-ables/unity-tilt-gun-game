@@ -40,13 +40,14 @@
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
 
-			o.worldNormal = UnityObjectToWorldNormal(v.normal);
-
 			v2f vert(appdata v)
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+
+				o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
 				return o;
 			}
 
@@ -56,7 +57,10 @@
 			{
 				float4 sample = tex2D(_MainTex, i.uv);
 
-				return _Color * sample;
+				float3 normal = normalize(i.worldNormal);
+				float NdotL = dot(_WorldSpaceLightPos0, normal);
+
+				return _Color * sample * NdotL;
 			}
 			ENDCG
 		}
