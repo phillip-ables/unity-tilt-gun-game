@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\PreLoaderScript.cs" />
-    <None Include="Assets\NewSurfaceShader.shader" />
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\Fantasy Skybox FREE\Fog and Ambient references.txt" />
     <None Include="Assets\ToonShader.shader" />

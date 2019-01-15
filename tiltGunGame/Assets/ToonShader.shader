@@ -60,7 +60,10 @@
 				float3 normal = normalize(i.worldNormal);
 				float NdotL = dot(_WorldSpaceLightPos0, normal);
 
-				return _Color * sample * NdotL;
+				//so this is what just changed the real output to toon hard edges
+				float lightIntensity = NdotL > 0 ? 1 : 0;
+
+				return _Color * sample * lightIntensity;
 			}
 			ENDCG
 		}
