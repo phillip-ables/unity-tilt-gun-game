@@ -25,12 +25,16 @@
 			{
 				float4 vertex : POSITION;
 				float4 uv : TEXCOORD0;
+
+				float3 normal : NORMAL;
 			};
 
 			struct v2f
 			{
 				float4 pos : SV_POSITION;
 				float2 uv : TEXCOORD0;
+
+				float3 worldNormal : NORMAL;
 			};
 
 			sampler2D _MainTex;
