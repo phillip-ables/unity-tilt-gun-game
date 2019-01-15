@@ -24,6 +24,8 @@
 
 			#include "UnityCG.cginc"
 
+			#include "Lighting.cginc"
+
 			struct appdata
 			{
 				float4 vertex : POSITION;
@@ -50,6 +52,7 @@
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
 				o.worldNormal = UnityObjectToWorldNormal(v.normal);
+				
 
 				return o;
 			}
@@ -66,9 +69,10 @@
 				float NdotL = dot(_WorldSpaceLightPos0, normal);
 
 				//so this is what just changed the real output to toon hard edges
-				float lightIntensity = NdotL > 0 ? 1 : 0;
+				float lightIntensity = smoothstep(0, 0.01, NdotL);
+				float4 light = lightIntensity * _LightColor0;
 
-				return _Color * sample * (_AmbientColor + lightIntensity);
+				return _Color * sample * (_AmbientColor + light);
 			}
 			ENDCG
 		}
