@@ -4,6 +4,9 @@
 	{
 		_Color("Color", Color) = (0.5, 0.65, 1, 1)
 		_MainTex("Main Texture", 2D) = "white" {}
+
+		[HDR]
+		_AmbientColor("AmbientColor", Color) = (0.4, 0.4, 0.4, 1)
 	}
 		SubShader
 	{
@@ -53,6 +56,8 @@
 
 			float4 _Color;
 
+			float _AmbientColor;
+
 			float4 frag(v2f i) : SV_Target
 			{
 				float4 sample = tex2D(_MainTex, i.uv);
@@ -63,7 +68,7 @@
 				//so this is what just changed the real output to toon hard edges
 				float lightIntensity = NdotL > 0 ? 1 : 0;
 
-				return _Color * sample * lightIntensity;
+				return _Color * sample * (_AmbientColor + lightIntensity);
 			}
 			ENDCG
 		}
