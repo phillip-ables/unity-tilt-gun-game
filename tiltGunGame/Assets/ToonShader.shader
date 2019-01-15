@@ -7,6 +7,8 @@
 
 		[HDR]
 		_AmbientColor("AmbientColor", Color) = (0.4, 0.4, 0.4, 1)
+		_SpecularColor("Specular Color", Color) = (0.9, 0.9, 0.9, 1)
+		_Glossiness("Slossiness", Float) = 32
 	}
 		SubShader
 	{
@@ -45,6 +47,9 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
+
+			float _Glossiness;
+			float4 _SpecularColor;
 
 			v2f vert(appdata v)
 			{
