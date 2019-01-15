@@ -40,6 +40,7 @@
 				float2 uv : TEXCOORD0;
 
 				float3 worldNormal : NORMAL;
+				float3 viewDir : TEXCOORD1;
 			};
 
 			sampler2D _MainTex;
@@ -52,7 +53,7 @@
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
 				o.worldNormal = UnityObjectToWorldNormal(v.normal);
-				
+				o.viewDir = WorldSpaceViewDir(v.vertex);
 
 				return o;
 			}
