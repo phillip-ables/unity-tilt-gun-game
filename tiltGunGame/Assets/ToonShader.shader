@@ -69,6 +69,13 @@
 
 			float4 frag(v2f i) : SV_Target
 			{
+				float3 viewDir = normalize(i.viewDir);
+
+				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
+				float NdotH = dot(normal, halfVector);
+
+				float specularIntensity = pow(NdotH * lightIntexity, _Glossiness * _Glossiness)
+
 				float4 sample = tex2D(_MainTex, i.uv);
 
 				float3 normal = normalize(i.worldNormal);
@@ -78,7 +85,7 @@
 				float lightIntensity = smoothstep(0, 0.01, NdotL);
 				float4 light = lightIntensity * _LightColor0;
 
-				return _Color * sample * (_AmbientColor + light);
+				return _Color * sample * (_AmbientColor + light + specularIntensity);
 			}
 			ENDCG
 		}
