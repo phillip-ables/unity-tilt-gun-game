@@ -69,17 +69,17 @@
 
 			float4 frag(v2f i) : SV_Target
 			{
-				float3 viewDir = normalize(i.viewDir);
-
-				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
-				float NdotH = dot(normal, halfVector);
-
 				float specularIntensity = pow(NdotH * lightIntexity, _Glossiness * _Glossiness)
 
 				float4 sample = tex2D(_MainTex, i.uv);
 
 				float3 normal = normalize(i.worldNormal);
 				float NdotL = dot(_WorldSpaceLightPos0, normal);
+
+				float3 viewDir = normalize(i.viewDir);
+
+				float3 halfVector = normalize(_WorldSpaceLightPos0 + viewDir);
+				float NdotH = dot(normal, halfVector);
 
 				//so this is what just changed the real output to toon hard edges
 				float lightIntensity = smoothstep(0, 0.01, NdotL);
