@@ -3,54 +3,44 @@ guid: d3842702bc16aaa4c8499d36e733fd50
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: barrel
-    100002: Bone
-    100004: Bone 1
-    100006: Bone 2
-    100008: Bone_end
-    100010: Bone_end 1
-    100012: Bone_end 2
-    100014: GUN
-    100016: //RootNode
-    100018: hammer
-    100020: stock.001
-    100022: stock_mesh
-    100024: trigger
-    400000: barrel
-    400002: Bone
-    400004: Bone 1
-    400006: Bone 2
-    400008: Bone_end
-    400010: Bone_end 1
-    400012: Bone_end 2
-    400014: GUN
-    400016: //RootNode
-    400018: hammer
-    400020: stock.001
-    400022: stock_mesh
-    400024: trigger
+    100000: barrel_bone
+    100002: barrel_bone_end
+    100004: //RootNode
+    100006: gun
+    100008: gun_Mesh
+    100010: joint_barrel
+    100012: joint_leftTrig
+    100014: joint_rightTrig
+    100016: leftTrig_bone
+    100018: leftTrig_bone_end
+    100020: rightTrig_bone
+    100022: rightTrig_bone_end
+    100024: stock_bone
+    400000: barrel_bone
+    400002: barrel_bone_end
+    400004: //RootNode
+    400006: gun
+    400008: gun_Mesh
+    400010: joint_barrel
+    400012: joint_leftTrig
+    400014: joint_rightTrig
+    400016: leftTrig_bone
+    400018: leftTrig_bone_end
+    400020: rightTrig_bone
+    400022: rightTrig_bone_end
+    400024: stock_bone
     2100000: tengaugemetal2
     2100002: spear_wood
     2100004: mac10-gunmetalmedgrey
     2100006: eightgaugemetal2
     2100008: black
-    4300000: stock_mesh
-    4300002: barrel
-    4300004: trigger
-    7400000: stock.001|barReload
-    7400002: stock.001|stockReload
-    7400004: stock.001|trigReload
-    7400006: GUN|barReload
-    7400008: GUN|stockReload
-    7400010: GUN|trigReload
-    7400012: hammer|barReload
-    7400014: hammer|stockReload
-    7400016: hammer|trigReload
+    4300000: gun_Mesh
+    7400000: gun|ArmatureAction
+    7400002: gun|gunAction
+    7400004: gun|pFire.001
+    7400006: gun|pReload
     9500000: //RootNode
-    13700000: barrel
-    13700002: stock_mesh
-    13700004: trigger
-    2186277476908879412: ImportLogs
+    13700000: gun_Mesh
   externalObjects: {}
   materials:
     importMaterials: 1
